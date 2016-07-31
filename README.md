@@ -18,3 +18,8 @@ Each node have childs representig edges. Usage:
 This one is an object meant to create a trie
 
 * node test3.js test2.in
+
+## test4 
+
+* test4_graph.js module
+* node test4.js test2_b.in
