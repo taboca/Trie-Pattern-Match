@@ -21,18 +21,13 @@ lineReader.on('line', function (line) {
   i++;
 });
 
-
 lineReader.on('close', function (line) {
 for(var k in flatArray) { 
-  //if(flatArray[k] != {}) { 
     for(var item in flatArray[k]) { 
 	var target = flatArray[k][item];
  	console.log(k+"->"+target+":"+item);
     } 
-  //}  
-} 
 });
-
 
 function updateGraph(line) { 
   console.log('Reading string ', line);
