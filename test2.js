@@ -27,6 +27,7 @@ for(var k in flatArray) {
 	var target = flatArray[k][item];
  	console.log(k+"->"+target+":"+item);
     } 
+}
 });
 
 function updateGraph(line) { 
@@ -53,3 +54,4 @@ function updateGraph(line) {
   }  
 
 }
+
