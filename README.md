@@ -12,3 +12,9 @@ Each node have childs representig edges. Usage:
 
 * node test2.js test2.in 
 * node test2.js test2_b.in
+
+## test3.js 
+
+This one is an object meant to create a trie
+
+* node test3.js test2.in
