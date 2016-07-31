@@ -23,3 +23,7 @@ This one is an object meant to create a trie
 
 * test4_graph.js module
 * node test4.js test2_b.in
+
+## test5 
+
+* node test5.js input5.in 
