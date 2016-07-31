@@ -20,12 +20,9 @@ var graph   = { 'root': {} };
 
 var flatArray = new Array();
 flatArray[0]= {};
-
 var currKey = 0;
-baseIndex   = flatArray[currKey];
+var cc=1;
 currIndex   = flatArray[currKey];
-
-console.log("Testing currIndex with key current " + JSON.stringify((currIndex)));
 
 lineReader.on('line', function (line) {
   if(i==0) { 
@@ -37,7 +34,19 @@ lineReader.on('line', function (line) {
   i++;
 });
 
-cc=1;
+
+lineReader.on('close', function (line) {
+for(var k in flatArray) { 
+  //if(flatArray[k] != {}) { 
+    for(var item in flatArray[k]) { 
+	var target = flatArray[k][item];
+ 	console.log(k+"->"+target+":"+item);
+    } 
+  //}  
+} 
+});
+
+
 function updateGraph(line) { 
   console.log('Reading string ', line);
   currIndex=flatArray[0];
