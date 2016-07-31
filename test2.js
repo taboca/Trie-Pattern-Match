@@ -1,5 +1,5 @@
 var lineReader = require('readline').createInterface({
-  input: require('fs').createReadStream('test2.in')
+  input: require('fs').createReadStream(process.argv[2])
 });
 
 var c = 0;
