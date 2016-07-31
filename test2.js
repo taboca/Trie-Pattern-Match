@@ -5,19 +5,6 @@ var lineReader = require('readline').createInterface({
 var c = 0;
 var i = 0;
 
-/*
-   This model we have each numeric node to point to another numeric node
-
-   { '0' : {
- 		'A': '1', 
-           }
-
-   } 
-
-*/
-
-var graph   = { 'root': {} };
-
 var flatArray = new Array();
 flatArray[0]= {};
 var currKey = 0;
