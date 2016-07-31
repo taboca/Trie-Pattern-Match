@@ -27,9 +27,7 @@ function updateGraph(line) {
   currIndex=graph['root'];
    
   for( var k in line) { 
-
      currChar = line[k];
-
      if(currChar in currIndex) { 
 	console.log('entering..');
 	currIndex = currIndex[currChar]; 
@@ -39,7 +37,6 @@ function updateGraph(line) {
 	currIndex = currIndex[currChar]; 
      } 
      console.log(JSON.stringify(baseIndex));
-
   }  
 
 }
