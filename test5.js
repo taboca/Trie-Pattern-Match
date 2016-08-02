@@ -31,6 +31,8 @@ lineReader.on('close', function (line) {
     var indexInNode=0;
     var lastFound = 0;
     var ch=0;
+    output = '';
+
     while(found) { 
       if (s[ch] in trie.flatArray[indexInNode]) { 
         console.log("Checking input ["+s[ch]+"] which is index " + ch);
@@ -38,7 +40,7 @@ lineReader.on('close', function (line) {
         var target = trie.flatArray[indexInNode][s[ch]];
 	indexInNode = target;
         if(isEmpty(trie.flatArray[indexInNode]) ) { 
-          console.log("Found at position: " + lastFound);
+          output+= lastFound + ' ';
 	  ch++;
 	  lastFound++;
           indexInNode=0;
@@ -53,8 +55,7 @@ lineReader.on('close', function (line) {
       } 
 
   } 
-
-
+  console.log(output);
 });
 
 
