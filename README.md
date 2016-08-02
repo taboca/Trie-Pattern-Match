@@ -26,4 +26,5 @@ This one is an object meant to create a trie
 
 ## test5 
 
+* You may want to uncomment the console.logs in test4_graph.js
 * node test5.js input5.in 

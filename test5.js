@@ -13,10 +13,10 @@ trie.init();
 lineReader.on('line', function (line) {
   if(i==0) { 
     s = line;
-    console.log('Input strign is:' + s);
+    //console.log('Input strign is:' + s);
   } else if (i==1) { 
     c = parseInt(line); 
-    console.log('Line from file:', c);
+    //console.log('Line from file:', c);
   } else { 
     trie.update(line);
   } 
@@ -35,8 +35,8 @@ lineReader.on('close', function (line) {
 
     while(found) { 
       if (s[ch] in trie.flatArray[indexInNode]) { 
-        console.log("Checking input ["+s[ch]+"] which is index " + ch);
-        console.log(s[ch] + ' found ');
+        //console.log("Checking input ["+s[ch]+"] which is index " + ch);
+        //console.log(s[ch] + ' found ');
         var target = trie.flatArray[indexInNode][s[ch]];
 	indexInNode = target;
         if(isEmpty(trie.flatArray[indexInNode]) ) { 
@@ -50,7 +50,7 @@ lineReader.on('close', function (line) {
           ch++;
         } 
       } else { 
-	console.log('not a match');
+	//console.log('not a match');
 	found=false;
       } 
 

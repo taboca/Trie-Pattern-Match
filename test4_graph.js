@@ -8,13 +8,13 @@ var trie = {
   }, 
 
   update: function (line) { 
-    console.log('Reading string ', line);
+    //console.log('Reading string ', line);
     var currIndex=this.flatArray[0];
    
     for( var k in line) { 
      var currChar = line[k];
      if(currChar in currIndex) { 
-	console.log('entering..');
+	//console.log('entering..');
      } else { 
 	var el = this.cc;
 	currIndex[currChar]= el;
@@ -22,12 +22,12 @@ var trie = {
   	   this.flatArray[el]={};
 	   this.cc++;
         } else { 
-	   console.log(el + ' exists in flatarray');
+	   //console.log(el + ' exists in flatarray');
         }  
-	console.log('entering..' + currIndex[currChar]);
+	//console.log('entering..' + currIndex[currChar]);
      } 
      currIndex = this.flatArray[currIndex[currChar]]; 
-     console.log(JSON.stringify(this.flatArray));
+     //console.log(JSON.stringify(this.flatArray));
     }  
   }
 } 
