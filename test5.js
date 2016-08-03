@@ -17,7 +17,8 @@ lineReader.on('line', function (line) {
   } else if (i==1) { 
     c = parseInt(line); 
     //console.log('Line from file:', c);
-  } else { 
+  } else {   
+    console.log("making " + line);
     trie.update(line);
   } 
   i++;
@@ -34,24 +35,31 @@ lineReader.on('close', function (line) {
     output = '';
 
     while(found) { 
+      
       if (s[ch] in trie.flatArray[indexInNode]) { 
-        //console.log("Checking input ["+s[ch]+"] which is index " + ch);
-        //console.log(s[ch] + ' found ');
-        var target = trie.flatArray[indexInNode][s[ch]];
-	indexInNode = target;
+        console.log("Checking input ["+s[ch]+"] which is index " + ch);
+        console.log(s[ch] + ' found ');
+	indexInNode = trie.flatArray[indexInNode][s[ch]];
         if(isEmpty(trie.flatArray[indexInNode]) ) { 
+	  console.log(lastFound);
           output+= lastFound + ' ';
-	  ch++;
 	  lastFound++;
           indexInNode=0;
           ch=lastFound;
+          //ch++;
+	  //console.log(ch);
         } 
         else { 
+	  console.log('.');
           ch++;
         } 
       } else { 
 	//console.log('not a match');
-	found=false;
+  	ch++;
+        indexInNode=0;
+        if(ch>=s.length) { 
+	  found=false;
+        } 
       } 
 
   } 
