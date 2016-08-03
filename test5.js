@@ -32,6 +32,7 @@ lineReader.on('close', function (line) {
     var indexInNode=0;
     var lastFound = 0;
     var ch=0;
+    var keyPointer=0;
     output = '';
 
     while(found) { 
@@ -40,22 +41,21 @@ lineReader.on('close', function (line) {
         console.log("Checking input ["+s[ch]+"] which is index " + ch);
         console.log(s[ch] + ' found ');
 	indexInNode = trie.flatArray[indexInNode][s[ch]];
+         
         if(isEmpty(trie.flatArray[indexInNode]) ) { 
 	  console.log(lastFound);
-          output+= lastFound + ' ';
-	  lastFound++;
+          output+= keyPointer + ' ';
           indexInNode=0;
-          ch=lastFound;
-          //ch++;
-	  //console.log(ch);
+  	  ch=++keyPointer;
         } 
         else { 
 	  console.log('.');
           ch++;
         } 
       } else { 
-	//console.log('not a match');
-  	ch++;
+	ch = ++keyPointer;
+	console.log('not a match. Now index str = ' + ch);
+
         indexInNode=0;
         if(ch>=s.length) { 
 	  found=false;
