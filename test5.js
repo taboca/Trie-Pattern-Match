@@ -1,4 +1,4 @@
-var trie = require('./test4_graph.js');
+var trie = require('./test4_lib_trie.js');
 
 var lineReader = require('readline').createInterface({
   input: require('fs').createReadStream(process.argv[2])
